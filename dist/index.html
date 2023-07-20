@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: YuGotic;
+        }
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+        #swiper-title {
+            width: 600px;
+            margin: 0vw auto;
+        }
+        #swiper-title-2 {
+            width: 600px;
+            margin: 0vw auto;
+        }
+        head {
+            position: absolute;
+        }
+        img {
+            align-self: center;
+            max-width: 100%;
+            max-height: 100%;
+        }
+        hr {
+            width: 800px;
+            margin: 50px auto;
+        }
+        form {
+            width: 300px;
+            margin: 5% 200px 20px;
+            padding-bottom: 20px;
+            text-align: center;
+        }
+        form div {
+            font-size: 10px;
+            display: flex;
+        }
+        form ul {
+            text-align: left;
+            margin: 0%;
+            font-size: 10px;
+        }
+        button {
+            margin-top: 20px;
+        }
+        input::placeholder {
+            font-size: 8px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <!-- Slider main container -->
+    <div class="swiper swiper-1">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">slide 1</div>
+        <div class="swiper-slide">slide 2</div>
+        <div class="swiper-slide">slide 3</div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <div id="swiper-title"></div>
+
+    <div class="swiper swiper-2">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="/dist/a.png"></div>
+        <div class="swiper-slide"><img src="/dist/b.png"></div>
+        <div class="swiper-slide"><img src="/dist/c.png"></div>
+
+        </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+    
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    
+        <!-- If we need scrollbar -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+    <div id="swiper-title-2"></div>
+
+    <hr>
+
+    <head>
+        <ul>お問い合わせ</ul>
+        <div>
+            
+        </div>
+    </head>
+    <form id="basic_form">
+        <div>
+            <ul>名前 / name</ul>
+            <input id="basic_name" name="name" type="text" size="20" placeholder="例）山田 太郎" />
+        </div>
+        <div>
+            <ul>メールアドレス / mail</ul>
+            <input id="basic_email" name="email" type="text" placeholder="yamadatarou@mail.com" />
+        </div>
+        <div>
+            <ul>パスワード / password</ul>
+            <input id="basic_password" name="password" type="text" placeholder="8文字以上、文字・数字1つ以上" />
+        </div>
+        <div>
+            <ul>年齢 / age</ul>
+            <input id="basic_age" type="text" name="age" placeholder="18歳以下は送信できません" />
+        </div>
+        <div>
+            <ul>住所 / address</ul>
+            <input id="basic_address" type="text" name="address" placeholder="例）606-0016">
+        </div>
+        <button type="submit">Submit</button></div>
+    </form>
+    <script src="main.js"></script>
+</body>
+</html>
