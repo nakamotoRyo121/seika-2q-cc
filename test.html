@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    let nur = 0;
+
+    function checkNurValue(newValue) {
+      console.log(`nurの値が変化しました。新しい値は: ${newValue}`);
+    }
+
+    const nurProxy = new Proxy({ value: nur }, {
+      set: function (target, key, value) {
+        if (key === 'value' && target[key] !== value) {
+          target[key] = value;
+          checkNurValue(value);
+        }
+        return true;
+      }
+    });
+
+    function changeNurValue() {
+      // ボタンを押すとnurの値が変化する
+      nurProxy.value += 1;
+    }
+  </script>
+</head>
+<body>
+  <button onclick="changeNurValue()">nurの値を変化させる</button>
+</body>
+</html>

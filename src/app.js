@@ -1,48 +1,133 @@
 import { gsap } from "gsap";
 
-const gsapEffects = [
-    { 
-      id: "fadeSlideTo",  
-      props: { opacity: 0.5, x: 300, yoyo: true, repeat: -1 }
-    },
-    { 
-      id: "fadeSlideFrom", 
-    //   animate: 'from'は指定したサイズ（x: 300）の値からスタートするという意味
-      animate: 'from',
-      props: { opacity: 0.25, x: 300, yoyo: true, repeat: -1  }
-    },
-    { 
-      id: "fadeSlideFromTo", 
-    //   animate: 'fromTo', は指定したサイズの初めと終わりの位置を指定する（from + to、という意味）
-      animate: 'fromTo', 
-    //   props: { opacity: 0.1, x: 300}, 
-      props2: { opacity: 1, x: 600, yoyo: true, repeat: -1  }
-    }
-  ];
-  
-  gsapEffects.forEach(effect => {
-    gsap.registerEffect({
-      name: effect.id,
-      defaults: { duration: 1 },
-      extendTimeline: true,
-      effect(targets, config) {
-        if(effect.animate === 'from'){
-          return gsap.from(targets, {...effect.props,...config })
-        } 
-        else if (effect.animate === 'fromTo'){ 
-          return gsap.fromTo(targets, {...effect.props,...config }, {...effect.props2})
-          }
-        else {
-          return gsap.to(targets, {...effect.props,...config })
-        }
-      }
-    });
-  });
-  
-  
-  
-  let tl = gsap.timeline();
-  tl.fadeSlideTo(".fadeSlideTo")
-    .fadeSlideFrom(".fadeSlideFrom", 0)
-    .fadeSlideFromTo(".fadeSlideFromTo", 0)
-  
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
+
+// swiper
+const swiper1 = new Swiper('.swiper-1',{
+  direction: 'horizontal',
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  speed: 500,
+});
+
+// gsap
+const tl = gsap.timeline();
+const consept1 = document.querySelector('#consept1');
+tl.from(consept1, {
+  y: 50,
+  duration: 2,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const sub1 = document.querySelector('.sub1');
+tl.from(sub1, {
+  y: 0,
+  duration: 2,
+  delay: 0.35,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const consept2 = document.querySelector('#consept2');
+tl.from(consept2, {
+  y: 30,
+  duration: 2,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const sub2 = document.querySelector('.sub2');
+tl.from(sub2, {
+  y:30,
+  duration: 2,
+  delay: 0.3,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const consept3 = document.querySelector('#consept3');
+tl.from(consept3, {
+  y: 30,
+  duration: 2,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const sub3 = document.querySelector('.sub3');
+tl.from(sub3, {
+  y:30,
+  duration: 2,
+  delay: 0.3,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const consept4 = document.querySelector('#consept4');
+tl.from(consept4, {
+  y: 30,
+  duration: 2,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const sub4 = document.querySelector('.sub4');
+tl.from(sub4, {
+  y:30,
+  duration: 2,
+  delay: 0.3,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const consept5 = document.querySelector('#consept5');
+tl.from(consept5, {
+  y: 30,
+  duration: 2,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const sub5 = document.querySelector('.sub5');
+tl.from(sub5, {
+  y:30,
+  duration: 2,
+  delay: 0.3,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const consept6 = document.querySelector('#consept6');
+tl.from(consept6, {
+  y: 30,
+  duration: 2,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+const sub6 = document.querySelector('.sub6');
+tl.from(sub6, {
+  y:30,
+  duration: 2,
+  delay: 0.3,
+  ease: "expo.out",
+  autoAlpha: 0,
+}, 1);
+
+let change = swiper1.realIndex;
+
+swiper1.on('slideChange', function() {
+  if (change > -5) {
+    console.log(change);
+    tl.seek(0);
+  }
+});
+
+
