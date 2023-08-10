@@ -14,6 +14,9 @@ const swiper1 = new Swiper('.swiper-1',{
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  autoplay: {
+    delay: 7000,
+  },
   speed: 500,
 });
 
